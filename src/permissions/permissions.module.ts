@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { PermissionsService } from './permissions.service';
 import { PermissionsController } from './permissions.controller';
-import { PermissionsRepositorie } from './repositories/permissions_repositories';
+import { PermissionsRepositorie } from './repositories/permissions.repositories';
 import { DatabaseModule } from 'src/database/database.module';
 
 @Module({
@@ -9,4 +9,4 @@ import { DatabaseModule } from 'src/database/database.module';
   controllers: [PermissionsController],
   providers: [PermissionsService, PermissionsRepositorie],
 })
-export class PermissionsModule {}
+export class PermissionsModule { }

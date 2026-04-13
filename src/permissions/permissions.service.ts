@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePermissionDto } from './dto/create-permission.dto';
 import { UpdatePermissionDto } from './dto/update-permission.dto';
-import { PermissionsRepositorie } from './repositories/permissions_repositories';
+import { PermissionsRepositorie } from './repositories/permissions.repositories';
 
 @Injectable()
 export class PermissionsService {

@@ -20,10 +20,7 @@ export class PermissionsRepositorie {
             update: {
                 description: createPermissionDto.description,
             },
-            create: {
-                name: permission.name,
-                description: permission.description
-            },
+            create: permission,
         });
     }
 
