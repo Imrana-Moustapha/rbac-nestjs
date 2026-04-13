@@ -1,3 +1,4 @@
+// This is your Prisma schema file
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,18 +12,18 @@ model User {
   name      String
   email     String   @unique
   password  String
-  roles     Role[] 
+  roles     Role[]   
   createdAt DateTime @default(now())
 
-  @@map("users")
+  @@map("users") 
 }
 
 model Role {
   id          Int          @id @default(autoincrement())
   name        String       @unique
   description String?
-  users       User[]       // Relation inverse pour le Many-to-Many avec User
-  permissions Permission[]
+  users       User[]       
+  permissions Permission[] 
   createdAt   DateTime     @default(now())
 
   @@map("roles")
@@ -30,9 +31,9 @@ model Role {
 
 model Permission {
   id          Int      @id @default(autoincrement())
-  name        String   @unique // Ex: "user:create", "role:delete"
+  name        String   @unique 
   description String?
-  roles       Role[]
+  roles       Role[]   
   createdAt   DateTime @default(now())
 
   @@map("permissions")
